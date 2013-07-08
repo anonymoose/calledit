@@ -24,14 +24,15 @@
 
 ;; View functions
 (defn index [msg asdf]
-  (log/info "ken")
-  (render-template "index" {:greeting msg, :fud asdf}))
+  (render-template "index" {:greeting msg :fud asdf}))
+
 
 ;; Routing
 (defroutes app-routes
   (GET "/" [msg asdf] (index msg asdf))
   (route/resources "/")
   (route/not-found "404 Not Found"))
+
 
 (defn app []
   (-> app-routes
@@ -43,7 +44,6 @@
 (defn svr-start []
     (let [port (Integer/parseInt (get (System/getenv) "PORT" "5000"))]
     (jetty/run-jetty (app) {:port port :join? false})))
-
 
 (defn -main [] (svr-start))
 
