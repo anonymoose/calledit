@@ -1,0 +1,35 @@
+{{> header}}
+
+<div class="jumbotron">
+  <h1>You called it.</h1>
+</div>
+
+<hr>
+
+  <div class="row-fluid marketing">
+    <div class="span12">
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Called on</th>
+            <th>For date</th>
+            <th>Prediction</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#calls}}
+          <tr>
+            <td>{{#convert-to-dt}}{{create_dt}}{{/convert-to-dt}}</td>
+            <td>{{prediction_dt}}</td>
+            <td>{{prediction}}</td>
+          </tr>
+          {{/calls}}
+        </tbody>
+      </table>
+      
+    </div>
+  </div>
+
+{{> footer}}
+        
+
