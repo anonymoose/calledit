@@ -16,7 +16,7 @@
 (defn connect-db []
   "split up DATABASE_URL into constituent parts so that korma likes it."
   (let
-      [db-uri-str (System/getenv "DATABASE_URL")
+      [db-uri-str (System/getenv "HEROKU_POSTGRESQL_BLACK_URL")
        db-uri (java.net.URI. db-uri-str)]
     (->> (string/split (.getUserInfo db-uri) #":")
          (#(identity {:db (last (string/split db-uri-str #"\/"))
