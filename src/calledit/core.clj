@@ -4,6 +4,7 @@
         [ring.middleware.cookies        :only [wrap-cookies]]
         [ring.middleware.keyword-params :only [wrap-keyword-params]]
         [calledit.controller.routes :only [app-routes]]
+        [calledit.lib.db :only [connect-db]]
         )
   (:require
     [ring.adapter.jetty :as jetty]
@@ -21,7 +22,8 @@
 
 
 (defn svr-start []
-    (let [port (Integer/parseInt (get (System/getenv) "PORT" "5000"))]
+  (connect-db)
+  (let [port (Integer/parseInt (get (System/getenv) "PORT" "5000"))]
     (jetty/run-jetty (app) {:port port :join? false})))
 
 

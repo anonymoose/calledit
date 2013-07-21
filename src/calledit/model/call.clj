@@ -1,6 +1,5 @@
 (ns calledit.model.call
   (:use
-   [calledit.lib.db :only [db]]
    [korma.db]
    [korma.core])
   (:require
