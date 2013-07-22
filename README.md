@@ -1,6 +1,6 @@
 # calledit
 
-Compojure web application for i-called.it
+Compojure web application for kalled.it
 
 ## Usage
 
