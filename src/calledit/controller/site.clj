@@ -71,9 +71,10 @@
 
 
 (defn call-find [email]
-  (error "called find. inner")
-  (-common-render "call.list" {:email email
-                               :convert-dt #()
-                               :calls (call/find-by-email email)}))
+  (let [calls (call/find-by-email email)]
+    (if (> 0 (count calls))
+      (-common-render "call.list" {:email email
+                                   :calls calls})
+      (-common-render "call.empty" {:email email}))))
 
 
