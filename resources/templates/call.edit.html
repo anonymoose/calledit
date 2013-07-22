@@ -8,8 +8,6 @@
 
 {{#link}}{{call_id}}{{/link}}
 
-<p id="errors" style="height:10px; color:red;"></p>
-
 <form method="POST" id="edit" action="{{postback}}">
   <input type="hidden" name="call_id" value="{{call_id}}"/>
   <div class="row-fluid marketing">
@@ -39,7 +37,10 @@
     </div>
   </div>
   <div class="row-fluid marketing">
-    <div class="offset8 span4">
+    <div class="span8">
+      <p id="errors" style="height:10px; color:red;"></p>
+    </div>
+    <div class="span4">
       <button type="submit" class="btn btn-large btn-success">Save It!</button>
     </div>
   </div>

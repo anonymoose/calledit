@@ -12,5 +12,7 @@
                  [korma "0.3.0-RC5"]
                  [compojure "1.1.5"]
                  [c3p0/c3p0 "0.9.1.2"]
+                 [clj-http "0.7.5"]
                  [de.ubercode.clostache/clostache "1.3.1"]]
   :main calledit.core)
+

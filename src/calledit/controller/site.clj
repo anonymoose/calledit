@@ -43,6 +43,8 @@
                                  :call_id (:call_id c)
                                  :prediction (:prediction c)
                                  :prediction_dt (:prediction_dt c)
+                                 :headline (rand-nth ["So let it be written. So let it be done."
+                                                      "You said it.  Were you right?"])
                                  :email (:email c)})))
 
 
@@ -69,12 +71,12 @@
      "Save an existing 'call' record."
      (do
        (call/save call_id email prediction prediction_dt)
-       (ring/redirect (str "/call-edit/" call_id))))
+       (ring/redirect (str "/" call_id))))
   ([email prediction prediction_dt]
      "Save new 'call' record."
      (when-not (and (str/blank? prediction) (str/blank? prediction))
          (let [call_id (:call_id (call/create email prediction prediction_dt))]
-           (ring/redirect (str "/call-edit/" call_id)))))) 
+           (ring/redirect (str "/" call_id)))))) 
 
 
 (defn call-find [email]
