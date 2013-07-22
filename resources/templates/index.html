@@ -24,11 +24,12 @@
 <div class="row-fluid marketing">
   <div class="span12">
     <h4>Dredge up the past. Look up past predictions by your email.</h4>
-    <form method="GET" action="/find">
+    <form method="GET" id="find" action="/find">
       <input type="text" name="email" id="email" 
-             class="input-xxlarge" placeholder="Email goes here. Of course."
+             class="input-large" placeholder="Email goes here. Of course."
              value=""> 
       <button type="submit" class="btn btn-link" style="margin-top:-10px">Find</button>
+      <p id="errors" style="height:10px; color:red;"></p>
     </form>
   </div>
 

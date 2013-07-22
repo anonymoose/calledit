@@ -1,3 +1,6 @@
+;;
+;; Data model for the "call" table
+;;
 (ns calledit.model.call
   (:use
    [korma.db]
@@ -20,6 +23,13 @@
   (first (select ci_call
                  (where {:call_id call_id
                          :delete_dt nil}))))
+
+
+(defn find-last-n [n]
+  (select ci_call
+          (where {:delete_dt nil})
+          (order :create_dt :ASC)
+          (limit n)))
 
 
 (defn save [call_id email prediction prediction_dt]

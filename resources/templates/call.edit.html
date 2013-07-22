@@ -8,7 +8,9 @@
 
 {{#link}}{{call_id}}{{/link}}
 
-<form method="POST" action="{{postback}}">
+<p id="errors" style="height:10px; color:red;"></p>
+
+<form method="POST" id="edit" action="{{postback}}">
   <input type="hidden" name="call_id" value="{{call_id}}"/>
   <div class="row-fluid marketing">
     <div class="span12">

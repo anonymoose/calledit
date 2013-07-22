@@ -17,10 +17,10 @@
 
 
 (defn render-page
-  "Pass in the template name (a string, sans its .html
-filename extension), the data for the template (a map), and a list of
-partials (keywords) corresponding to like-named template filenames."
   [template data partials]
+  "Pass in the template name (a string, sans its .html
+    filename extension), the data for the template (a map), and a list of
+    partials (keywords) corresponding to like-named template filenames."
   (clostache/render-resource
     (str "templates/" template ".html")
     data

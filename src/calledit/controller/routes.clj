@@ -19,6 +19,7 @@
   (POST "/call-create" [email prediction prediction_dt] (calledit.controller.site/call-save email prediction prediction_dt))
   (POST "/call-save"   [call_id email prediction prediction_dt] (calledit.controller.site/call-save email prediction prediction_dt call_id))
   (GET "/find" [email]          (calledit.controller.site/call-find email))
+  (GET "/about" []          (calledit.controller.site/about))
   (GET "/:call_id" [call_id] (calledit.controller.site/call-view call_id)) ; must be last
 
   (route/resources "/")
