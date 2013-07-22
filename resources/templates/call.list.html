@@ -6,29 +6,23 @@
 
 <hr>
 
+{{#calls}}
   <div class="row-fluid marketing">
-    <div class="span12">
-      <table class="table">
-        <thead>
-          <tr>
-            <th>Called on</th>
-            <th>For date</th>
-            <th>Prediction</th>
-          </tr>
-        </thead>
-        <tbody>
-          {{#calls}}
-          <tr>
-            <td>{{#convert-to-dt}}{{create_dt}}{{/convert-to-dt}}</td>
-            <td>{{prediction_dt}}</td>
-            <td>{{prediction}}</td>
-          </tr>
-          {{/calls}}
-        </tbody>
-      </table>
-      
+    <div class="span2">
+      <h4>{{prediction_dt}}</h4>
+    </div>
+    <div class="span10">
+      <h4>"{{prediction}}"</h4>
     </div>
   </div>
+
+  <div class="row-fluid marketing">
+    <div class="offset8 span4">
+      <h4>-- {{email}}</h4>
+    </div>
+  </div>
+<hr>
+{{/calls}}
 
 {{> footer}}
         

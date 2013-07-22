@@ -21,8 +21,6 @@
   (render-page page
                (merge vars
                       {:today util/current-date-str
-                       ;:convert-to-dt #(subs (str %) 0 19)
-                       :convert-to-dt #(str (type %))
                        })
                [:header :footer]))
 
@@ -82,7 +80,7 @@
 (defn call-find [email]
   "Search by email"
   (let [calls (call/find-by-email email)]
-    (if (> 0 (count calls))
+    (if (< 0 (count calls))
       (-common-render "call.list" {:email email
                                    :calls calls})
       (-common-render "call.empty" {:email email}))))

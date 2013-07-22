@@ -10,7 +10,11 @@
 
 
 (defentity ci_call
-  (pk :call_id))
+  (pk :call_id)
+  (transform (fn [{create_dt :create_dt :as v}]
+               (if create_dt
+                 (assoc v :create_dt (util/format-date create_dt)) v)))
+  )
 
 
 (defn find-by-email [email]
